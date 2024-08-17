@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">ShoeStore</string>
+    <string name="sign_up_button_text"><u>Sign Up</u></string>
+    <string name="login_welcome_title">Welcome</string>
+    <string name="login_welcome_subtitle">Please login with your information</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forgot_password">I forgot my password</string>
+    <string name="or_login_with">or Login with</string>
+    <string name="login">LOGIN</string>
 </resources>
