@@ -9,4 +9,6 @@
     <string name="forgot_password">I forgot my password</string>
     <string name="or_login_with">or Login with</string>
     <string name="login">LOGIN</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
