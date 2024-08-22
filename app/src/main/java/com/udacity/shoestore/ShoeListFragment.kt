@@ -7,12 +7,15 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Lifecycle
+import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import com.udacity.shoestore.databinding.ShoeItemBinding
 import com.udacity.shoestore.viewmodel.ShoeListViewModel
@@ -20,6 +23,7 @@ import com.udacity.shoestore.viewmodel.ShoeListViewModel
 class ShoeListFragment : Fragment() {
 
     private val viewModel: ShoeListViewModel by activityViewModels()
+    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,6 +49,8 @@ class ShoeListFragment : Fragment() {
             Navigation.createNavigateOnClickListener(R.id.action_shoeListFragment_to_shoeDetailFragment)
         )
 
+        navController = findNavController()
+
         return binding.root
     }
 
@@ -59,8 +65,7 @@ class ShoeListFragment : Fragment() {
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
                 return when (menuItem.itemId) {
                     R.id.action_logout -> {
-                        view.findNavController()
-                            .navigate(R.id.action_shoeListFragment_to_loginFragment)
+                        showConfirmLogoutDialog()
                         true
                     }
 
@@ -70,6 +75,32 @@ class ShoeListFragment : Fragment() {
 
         }
         requireActivity().addMenuProvider(menuProvider, viewLifecycleOwner, Lifecycle.State.RESUMED)
+
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    showConfirmLogoutDialog()
+                }
+            })
+    }
+
+    private fun showConfirmLogoutDialog() {
+        MaterialAlertDialogBuilder(requireContext(), R.style.CustomMaterialAlertDialogTheme)
+            .setTitle("Signing Out")
+            .setMessage("Are you sure you want to log out?")
+            .setNegativeButton("No") { dialog, _ ->
+                dialog.dismiss()
+            }
+            .setPositiveButton("Yes") { dialog, _ ->
+                logout()
+                dialog.dismiss()
+            }
+            .show()
+    }
+
+    private fun logout() {
+        navController.navigate(R.id.action_shoeListFragment_to_loginFragment)
     }
 
 }
