@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.findNavController
@@ -41,8 +42,7 @@ class LoginFragment : Fragment() {
             }
 
             if (!_binding.remembermeCheckbox.isChecked) {
-                _binding.usernameEdittext.setText("")
-                _binding.passwordEdittext.setText("")
+                clearInputs()
             }
 
             it.findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
@@ -58,8 +58,7 @@ class LoginFragment : Fragment() {
             createUser(username, password)
 
             if (!_binding.remembermeCheckbox.isChecked) {
-                _binding.usernameEdittext.setText("")
-                _binding.passwordEdittext.setText("")
+                clearInputs()
             }
 
             it.findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment)
@@ -85,6 +84,24 @@ class LoginFragment : Fragment() {
         }
 
         return _binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        // Hide the Action Bar
+        (activity as? AppCompatActivity)?.supportActionBar?.hide()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        // Show the Action Bar when the Fragment is no longer visible
+        (activity as? AppCompatActivity)?.supportActionBar?.show()
+    }
+
+    private fun clearInputs() {
+        _binding.usernameEdittext.text.clear()
+        _binding.passwordEdittext.text.clear()
     }
 
     private fun showNotYetImplementedMessage(provider: String) {
