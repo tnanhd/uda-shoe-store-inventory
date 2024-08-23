@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -91,6 +92,14 @@ class LoginFragment : Fragment() {
 
         val toolbar: Toolbar? = activity?.findViewById(R.id.toolbar)
         toolbar?.visibility = View.GONE
+
+        requireActivity().onBackPressedDispatcher.addCallback(
+            viewLifecycleOwner,
+            object : OnBackPressedCallback(true) {
+                override fun handleOnBackPressed() {
+                    requireActivity().finish()
+                }
+            })
     }
 
     override fun onDestroyView() {
@@ -98,7 +107,6 @@ class LoginFragment : Fragment() {
 
         val toolbar: Toolbar? = activity?.findViewById(R.id.toolbar)
         toolbar?.visibility = View.VISIBLE
-
     }
 
     private fun clearInputs() {
