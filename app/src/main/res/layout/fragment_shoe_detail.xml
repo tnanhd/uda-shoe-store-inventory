@@ -5,6 +5,7 @@
     tools:context=".ShoeDetailFragment">
 
     <data>
+
         <variable
             name="shoeDetail"
             type="com.udacity.shoestore.viewmodel.ShoeDetailViewModel" />
@@ -24,85 +25,97 @@
             android:labelFor="@+id/shoe_name_edittext"
             android:text="@string/shoe_name"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/text_size_small"
+            android:textSize="@dimen/text_size_medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <EditText
             android:id="@+id/shoe_name_edittext"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:autofillHints="@string/shoe_name"
             android:inputType="text"
+            android:paddingTop="0dp"
             android:text="@={shoeDetail.shoeName}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shoe_name_label" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/shoe_company_edittext"
+            app:layout_constraintTop_toTopOf="@+id/shoe_name_label" />
 
         <TextView
             android:id="@+id/shoe_company_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
             android:alpha="0.7"
             android:labelFor="@+id/shoe_company_edittext"
             android:text="@string/shoe_company"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/text_size_small"
+            android:textSize="@dimen/text_size_medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_name_edittext" />
 
         <EditText
             android:id="@+id/shoe_company_edittext"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:autofillHints="@string/shoe_company"
-            android:text="@={shoeDetail.shoeCompany}"
             android:inputType="text"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shoe_company_label" />
+            android:paddingTop="0dp"
+            android:text="@={shoeDetail.shoeCompany}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/shoe_size_edittext"
+            app:layout_constraintTop_toTopOf="@+id/shoe_company_label" />
 
         <TextView
             android:id="@+id/shoe_size_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
             android:alpha="0.7"
             android:labelFor="@+id/shoe_size_edittext"
             android:text="@string/shoe_size"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/text_size_small"
+            android:textSize="@dimen/text_size_medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_company_edittext" />
 
         <EditText
             android:id="@+id/shoe_size_edittext"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@={shoeDetail.shoeSize}"
             android:autofillHints="@string/shoe_size"
             android:inputType="numberDecimal"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shoe_size_label" />
+            android:paddingTop="0dp"
+            android:text="@={shoeDetail.shoeSize}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/shoe_description_edittext"
+            app:layout_constraintTop_toTopOf="@+id/shoe_size_label" />
 
         <TextView
             android:id="@+id/shoe_description_label"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_medium"
             android:alpha="0.7"
             android:labelFor="@+id/shoe_description_edittext"
             android:text="@string/shoe_description"
             android:textColor="@android:color/black"
-            android:textSize="@dimen/text_size_small"
+            android:textSize="@dimen/text_size_medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_size_edittext" />
 
         <EditText
             android:id="@+id/shoe_description_edittext"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin_large"
             android:autofillHints="@string/shoe_description"
-            android:inputType="textLongMessage"
+            android:inputType="textMultiLine"
+            android:paddingTop="0dp"
             android:text="@={shoeDetail.shoeDescription}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/shoe_description_label" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/shoe_description_label"
+            app:layout_constraintTop_toTopOf="@+id/shoe_description_label" />
 
         <Button
             android:id="@+id/cancel_button"
