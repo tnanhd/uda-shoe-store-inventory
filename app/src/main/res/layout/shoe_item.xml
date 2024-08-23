@@ -10,11 +10,9 @@
             android:id="@+id/shoes_image"
             android:layout_width="80dp"
             android:layout_height="80dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
+            android:layout_margin="@dimen/margin_xsmall"
             android:scaleType="centerCrop"
-            android:src="@drawable/shoe_cover"
+            android:src="@drawable/shoe_item"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -23,10 +21,10 @@
             android:id="@+id/shoe_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginStart="@dimen/margin_small"
             android:text="Nice shoes"
             android:textColor="@android:color/black"
-            android:textSize="14sp"
+            android:textSize="@dimen/text_size_medium"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/shoes_image"
             app:layout_constraintTop_toTopOf="@+id/shoes_image" />
@@ -38,7 +36,7 @@
             android:alpha="0.5"
             android:text="Company:"
             android:textColor="@android:color/black"
-            android:textSize="12sp"
+            android:textSize="@dimen/text_size_small"
             app:layout_constraintStart_toStartOf="@+id/shoe_name"
             app:layout_constraintTop_toBottomOf="@+id/shoe_name" />
 
@@ -46,11 +44,11 @@
             android:id="@+id/shoe_company"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/margin_xsmall"
             android:alpha="0.5"
             android:text="Nike"
             android:textColor="@android:color/black"
-            android:textSize="12sp"
+            android:textSize="@dimen/text_size_small"
             app:layout_constraintStart_toEndOf="@+id/company_label"
             app:layout_constraintTop_toTopOf="@+id/company_label" />
 
@@ -61,7 +59,7 @@
             android:alpha="0.5"
             android:text="Size:"
             android:textColor="@android:color/black"
-            android:textSize="12sp"
+            android:textSize="@dimen/text_size_small"
             app:layout_constraintStart_toStartOf="@+id/shoe_name"
             app:layout_constraintTop_toBottomOf="@+id/company_label" />
 
@@ -69,11 +67,11 @@
             android:id="@+id/shoe_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="@dimen/margin_xsmall"
             android:alpha="0.5"
             android:text="40"
             android:textColor="@android:color/black"
-            android:textSize="12sp"
+            android:textSize="@dimen/text_size_small"
             app:layout_constraintStart_toEndOf="@+id/size_label"
             app:layout_constraintTop_toTopOf="@+id/size_label" />
 
@@ -81,11 +79,11 @@
             android:id="@+id/shoe_description"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
+            android:layout_marginEnd="@dimen/margin_small"
             android:alpha="0.5"
             android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
             android:textColor="@android:color/black"
-            android:textSize="12sp"
+            android:textSize="@dimen/text_size_small"
             app:layout_constrainedWidth="true"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/size_label"
