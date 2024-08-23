@@ -17,4 +17,5 @@
     <string name="shoe_description">Shoe Description</string>
     <string name="cancel">Cancel</string>
     <string name="save">Save</string>
+    <string name="navigate_to_shoe_detail_screen">Navigate to Shoe detail screen</string>
 </resources>
