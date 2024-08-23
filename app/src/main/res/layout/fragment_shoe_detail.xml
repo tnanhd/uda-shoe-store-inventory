@@ -15,7 +15,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin_large"
             android:alpha="0.7"
-            android:text="Shoe Name"
+            android:labelFor="@+id/shoe_name_edittext"
+            android:text="@string/shoe_name"
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_size_small"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +26,8 @@
             android:id="@+id/shoe_name_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="@string/shoe_name"
+            android:inputType="text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_name_label" />
 
@@ -33,7 +36,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.7"
-            android:text="Shoe Company"
+            android:labelFor="@+id/shoe_company_edittext"
+            android:text="@string/shoe_company"
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_size_small"
             app:layout_constraintStart_toStartOf="parent"
@@ -43,6 +47,8 @@
             android:id="@+id/shoe_company_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="@string/shoe_company"
+            android:inputType="text"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_company_label" />
 
@@ -51,7 +57,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.7"
-            android:text="Shoe Size"
+            android:labelFor="@+id/shoe_size_edittext"
+            android:text="@string/shoe_size"
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_size_small"
             app:layout_constraintStart_toStartOf="parent"
@@ -61,6 +68,8 @@
             android:id="@+id/shoe_size_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="@string/shoe_size"
+            android:inputType="numberDecimal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_size_label" />
 
@@ -69,7 +78,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:alpha="0.7"
-            android:text="Shoe Description"
+            android:labelFor="@+id/shoe_description_edittext"
+            android:text="@string/shoe_description"
             android:textColor="@android:color/black"
             android:textSize="@dimen/text_size_small"
             app:layout_constraintStart_toStartOf="parent"
@@ -79,6 +89,8 @@
             android:id="@+id/shoe_description_edittext"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:autofillHints="@string/shoe_description"
+            android:inputType="textLongMessage"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/shoe_description_label" />
 
@@ -89,7 +101,7 @@
             android:layout_marginEnd="@dimen/margin_small"
             android:layout_marginBottom="@dimen/margin_xlarge"
             android:background="@android:color/darker_gray"
-            android:text="Cancel"
+            android:text="@string/cancel"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@id/save_button"
@@ -100,7 +112,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"
-            android:text="Save"
+            android:text="@string/save"
             android:textColor="@android:color/white"
             app:layout_constraintBottom_toBottomOf="@id/cancel_button"
             app:layout_constraintEnd_toEndOf="parent"
